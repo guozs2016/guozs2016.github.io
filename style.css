@@ -1,0 +1,65 @@
+<style>
+    .wrapper {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    #header {
+        font: italic bold 30px Georgia, serif;
+        text-align: center;
+        background-color: lightgrey;
+    }
+    #search {
+        font-size: 15pt;
+        text-align: center;
+    }
+    #newswebsite {
+        font: bold 22px Times New Roman, sans-serif;
+        text-align: center;
+        background-color:#A9DFBF;
+    }
+    #sportswebsite {
+        font: bold 22px Times New Roman, sans-serif;
+        text-align: center;
+        background-color: #58D68D;
+    }
+
+    nav {
+        float: left;
+        width: 8em;
+        background: white;
+    }
+
+    nav ul {
+         margin: 0;
+         padding: 0;
+         width: 8em;
+         background: white;
+         border: 1px solid;
+    }
+
+    nav li {
+         position: relative;
+         list-style: none;
+         margin: 0;
+         border-bottom: 1px solid #CCC;
+    }
+
+    nav ul ul {
+        position: absolute;
+        top: 0;
+        left: 8em;
+        display: none;
+    }
+
+    nav li a {
+        display: block;
+        padding: 0.25em 0 0.25em 0.5em;
+        text-decoration: none;
+    }
+
+    nav li:hover ul{
+        background: white;
+        display:block;
+    }
+
+</style>

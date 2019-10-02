@@ -1,53 +1,76 @@
-  <html>
+<html>
     <head>
       <title> Fake 1998 Google</title>
+      <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
-          <center>
-            <h2>Welcome to fake google!</h2>
-          </center>
+        <div id="header">
+          Welcome to Fake Google!
+        </div>
         </header>
         <nav>
-          <center>
-            <img src="https://1c7qp243xy9g1qeffp1k1nvo-wpengine.netdna-ssl.com/wp-content/uploads/2018/03/5_Google-logo.jpg" width=280 height=150>
-          </center>
-          <center>
-            <form bgcolor="#EEEEE">
-              <input type="text" name="searchcontent" value=""><br><br>
-              <input type="submit" value="Google Search">    <input type="submit" value="I'm Feeling Lucky">
-            </form>
-          </center>
-          <center>
-          <p>Not Satisfied? Click <a href="http://web.archive.org/web/19990208004515/http://google.com/">Here</a> to back to the page I am modeling.</p>
-          </center>
+          <ul >
+           <li><a href='https://www.google.com/'>Home</a></li>
+           <li><a href='https://about.google/intl/en_us/'>Our Company</a>
+            <ul>
+             <li><a href='https://about.google/intl/en_us/'>About</a></li>
+             <li><a href='https://about.google/intl/en_us/products/?tip=autocomplete'>Products</a></li>
+             <li><a href='https://about.google/intl/en_us/commitments/'>Commitments</a></li>
+             <li><a href='https://about.google/intl/en_us/stories/'>Stories</a></li>
+            </ul>
+           </li>
+           <li><a href='https://www.google.com/partners/about/'>Our Partners</a>
+            <ul>
+             <li><a href='https://www.android.com/'>Android</a></li>
+             <li><a href='https://www.youtube.com'>Youtube</a>
+              <ul>
+               <li><a href='https://tv.youtube.com'>TV</a></li>
+               <li><a href='https://www.youtube.com/live_dashboard_splash'>Livestream</a></li>
+              </ul>
+             </li>
+            </ul>
+           </li>
+           <li><a href='https://contacts.google.com/'>Contact</a></li>
+          </ul>
         </nav>
+
         <article>
+          <div id="search">
+            <img src="https://1c7qp243xy9g1qeffp1k1nvo-wpengine.netdna-ssl.com/wp-content/uploads/2018/03/5_Google-logo.jpg" width=420 height=225><br>
+            <input type="text" name="searchcontent" value=""><br><br>
+            <input type="submit" value="Google Search">
+            <input type="submit" value="I'm Feeling Lucky"><br><br>
+          </div>
           <table width='100%' border=1px cellspacing=2>
           <tr>
-            <td bgcolor="lawngreen">
-              <center>
+            <td>
+              <div id="newswebsite">
                 Sports <br>
                 <a href="https://www.nfl.com/">NFL</a><br>
                 <a href="https://www.nba.com/#/">NBA</a><br>
                 <a href="https://www.mlb.com/">MLB</a><br>
-              </center>
+                <a href="https://www.formula1.com/">Formula 1</a><br>
+                <a href="https://na.leagueoflegends.com/index.php">League of Legends</a><br>
+              </div>
             </td>
-            <td bgcolor="limegreen">
-              <center>
+            <td>
+              <div id="sportswebsite">
                 News <br>
                 <a href="https://www.cnn.com/">CNN</a><br>
                 <a href="https://www.nbcnews.com/">NBC news</a><br>
                 <a href="https://www.foxnews.com/">FOX news</a><br>
                 <a href="https://www.bbc.com/">BBC</a><br>
-              </center>
+                <a href="https://www.theguardian.com/us">The Guardian</a><br>
+              </div>
             </td>
           </tr>
           </table>
         </article>
         <footer>
           <center>
-          <p>Made by Zhishang Guo on Sept 17th 2019<p>
+          <p>Made by Zhishang Guo on Oct 1st 2019<p>
+          <p>Not Satisfied? Click <a href="http://web.archive.org/web/19990208004515/http://google.com/">Here</a> to back to the page I am modeling.</p>
           </center>
         </footer>
     </body>
