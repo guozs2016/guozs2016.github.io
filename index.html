@@ -1,78 +1,45 @@
 <html>
-    <head>
-      <title> Fake 1998 Google</title>
-      <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-        <div id="header">
-          Welcome to Fake Google!
-        </div>
-        </header>
-        <nav>
-          <ul >
-           <li><a href='https://www.google.com/'>Home</a></li>
-           <li><a href='https://about.google/intl/en_us/'>Our Company</a>
-            <ul>
-             <li><a href='https://about.google/intl/en_us/'>About</a></li>
-             <li><a href='https://about.google/intl/en_us/products/?tip=autocomplete'>Products</a></li>
-             <li><a href='https://about.google/intl/en_us/commitments/'>Commitments</a></li>
-             <li><a href='https://about.google/intl/en_us/stories/'>Stories</a></li>
-            </ul>
-           </li>
-           <li><a href='https://www.google.com/partners/about/'>Our Partners</a>
-            <ul>
-             <li><a href='https://www.android.com/'>Android</a></li>
-             <li><a href='https://www.youtube.com'>Youtube</a>
-              <ul>
-               <li><a href='https://tv.youtube.com'>TV</a></li>
-               <li><a href='https://www.youtube.com/live_dashboard_splash'>Livestream</a></li>
-              </ul>
-             </li>
-            </ul>
-           </li>
-           <li><a href='https://contacts.google.com/'>Contact</a></li>
-          </ul>
-        </nav>
+  <script src="generator.js"></script>
+  <head>
+    <title>XKCD Generator</title>
+  </head>
+  <body>
+    <label for="minwordlen">Minimum Word Length:</label>
+    <select name="minwordlen" id="minwordlen">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select><br>
+    <label for="maxwordlen">Maximum Word Length:</label>
+    <select name="maxwordlen" id="maxwordlen">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select><br>
+    <label for="maxlength">Max length:</label>
+    <input type="number" id="maxlength" value="16" />
+    <br>
+    <label for="ET">Easy Typing</label>
+    <input type="checkbox" name="ET" id="EasyType" unchecked><br>
+    <label for="NS">Number Substitutions</label>
+    <input type="checkbox" name="NS" id="NumberSub" unchecked><br>
+    <button onclick="Generate();">Generate Password</button>
 
-        <article>
-          <div id="search">
-            <img src="https://1c7qp243xy9g1qeffp1k1nvo-wpengine.netdna-ssl.com/wp-content/uploads/2018/03/5_Google-logo.jpg" width=420 height=225><br>
-            <input type="text" name="searchcontent" value=""><br><br>
-            <input type="submit" value="Google Search">
-            <input type="submit" value="I'm Feeling Lucky"><br><br>
-          </div>
-          <table width='100%' border=1px cellspacing=2>
-          <tr>
-            <td>
-              <div id="newswebsite">
-                Sports <br>
-                <a href="https://www.nfl.com/">NFL</a><br>
-                <a href="https://www.nba.com/#/">NBA</a><br>
-                <a href="https://www.mlb.com/">MLB</a><br>
-                <a href="https://www.formula1.com/">Formula 1</a><br>
-                <a href="https://na.leagueoflegends.com/index.php">League of Legends</a><br>
-              </div>
-            </td>
-            <td>
-              <div id="sportswebsite">
-                News <br>
-                <a href="https://www.cnn.com/">CNN</a><br>
-                <a href="https://www.nbcnews.com/">NBC news</a><br>
-                <a href="https://www.foxnews.com/">FOX news</a><br>
-                <a href="https://www.bbc.com/">BBC</a><br>
-                <a href="https://www.theguardian.com/us">The Guardian</a><br>
-              </div>
-            </td>
-          </tr>
-          </table>
-        </article>
-        <footer>
-          <center>
-          <p>Made by Zhishang Guo on Oct 1st 2019<p>
-          <p>Not Satisfied? Click <a href="http://web.archive.org/web/19990208004515/http://google.com/">Here</a> to back to the page I am modeling.</p>
-          </center>
-        </footer>
-          <a href="xkcd.html">xkcd</a><br>
-    </body>
-  </html>
+    <p id="passworda"></p><br>
+    <p id="passwordb"></p><br>
+    <p id="passwordc"></p><br>
+    <p id="passwordd"></p><br>
+    <p id="passworde"></p><br>
+
+  </body>
+</html>
