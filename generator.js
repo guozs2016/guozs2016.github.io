@@ -1014,17 +1014,16 @@ Generate = function() {
       while (true){
         while (true){
           var randomItem = list[Math.floor(Math.random()*list.length)];
-          document.getElementById("password").innerHTML = randomItem;
           if (randomItem.length >= minWordLen && randomItem.length<=maxWordLen){
             break;
           }
         }
-        if (password.length + randomItem.length >  maxLen || wordChosen >= 4){
+        if (password.length + randomItem.length >  maxLen -1|| wordChosen >= 4){
           break;
         }
         else {
           password += randomItem;
-          printword += (randomItem+" ")
+          printword += (randomItem+"  ")
           wordChosen++;
         }
       }
@@ -1035,12 +1034,29 @@ Generate = function() {
         password += passNum;
         printword += (passNum)
       }
-      passlist.push(printword);
-      var password = "";
-      var printword = "";
-      var wordChosen = 0;
-      passChosen ++;
+      if (numberSub){
+        var changeword;
+        changeword = printword.replace(/l/g,1);
+        changeword = printword.replace(/e/g,3);
+        changeword = printword.replace(/o/g,0);
+        passlist.push(changeword);
+        var password = "";
+        var printword = "";
+        var wordChosen = 0;
+        passChosen ++;
+      }
+      else {
+        passlist.push(printword);
+        var password = "";
+        var printword = "";
+        var wordChosen = 0;
+        passChosen ++;
+      }
     }
-     document.getElementById("password").innerHTML =passlist;
+     document.getElementById("passworda").innerHTML =passlist[0];
+     document.getElementById("passwordb").innerHTML =passlist[1];
+     document.getElementById("passwordc").innerHTML =passlist[2];
+     document.getElementById("passwordd").innerHTML =passlist[3];
+     document.getElementById("passworde").innerHTML =passlist[4];
 
 }
