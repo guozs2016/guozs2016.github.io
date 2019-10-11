@@ -1086,13 +1086,15 @@ Generate = function() {
 
 
       if (numberSub){
-        var changeword;
+        var newpass = [];
         for (i=0;i<password.length;i++){
-          password[i]= password[i].replace(/l/g,1)
-          password[i] = password[i].replace(/e/g,3);
-          password[i] = password[i].replace(/o/g,0);
+          var word = String(password[i]);
+          var word1 = word.replace(/l/g,1);
+          var word2 = word1.replace(/e/g,3);
+          var word3 = word2.replace(/o/g,0);
+          newpass.push(word3);
         }
-        passlist.push(password);
+        passlist.push(newpass);
         var password = [];
         var wordChosen = 0;
         passChosen ++;
