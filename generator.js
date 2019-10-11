@@ -1004,6 +1004,16 @@ Generate = function() {
     "teeth",
     "shell",
     "neck"];
+    var ezlist = [];
+    for (i = 0; i < list.length; i++) {
+      var word = list[i];
+      for (j = 0; j < word.length-1;j++){
+        if (word[j] == word[j+1]){
+          ezlist.push(word);
+          break;
+        }
+      }
+    }
     var passlist = [];
     var password = "";
     var printword = "";
@@ -1013,10 +1023,19 @@ Generate = function() {
     while (passChosen < passLimit){
       while (true){
         while (true){
-          var randomItem = list[Math.floor(Math.random()*list.length)];
-          if (randomItem.length >= minWordLen && randomItem.length<=maxWordLen){
-            break;
+          if (!easyType){
+            var randomItem = list[Math.floor(Math.random()*list.length)];
+            if (randomItem.length >= minWordLen && randomItem.length<=maxWordLen){
+              break;
+            }
           }
+          else{
+            var randomItem = ezlist[Math.floor(Math.random()*ezlist.length)];
+            if (randomItem.length >= minWordLen && randomItem.length<=maxWordLen){
+              break;
+            }
+          }
+          break;
         }
         if (password.length + randomItem.length >  maxLen -1|| wordChosen >= 4){
           break;
@@ -1058,5 +1077,4 @@ Generate = function() {
      document.getElementById("passwordc").innerHTML =passlist[2];
      document.getElementById("passwordd").innerHTML =passlist[3];
      document.getElementById("passworde").innerHTML =passlist[4];
-
 }
