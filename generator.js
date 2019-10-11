@@ -1014,67 +1014,101 @@ Generate = function() {
         }
       }
     }
+    if (maxWordLen < minWordLen) {
+      alert("Min length is bigger than max length, choose another value!");
+      return;
+    }
+    if (maxLen<1) {
+      alert("Can't generate passwords if you dont want any!");
+      return;
+    }
+    if (maxLen<2) {
+      alert("you can choose a character as password LOL");
+      return;
+    }
+    if (maxLen>30) {
+      alert("Password is too complicated");
+      return;
+    }
+    if (maxWordLen == 2 && easyType) {
+      alert("Sorry, there is no 2 character word that same characters");
+      return;
+    }
     var passlist = [];
-    var password = "";
-    var printword = "";
+    var password = [];
     var wordChosen = 0;
     var passChosen = 0;
     var passLimit = 5;
     while (passChosen < passLimit){
       while (true){
+        Loop1:
         while (true){
           if (!easyType){
             var randomItem = list[Math.floor(Math.random()*list.length)];
             if (randomItem.length >= minWordLen && randomItem.length<=maxWordLen){
-              break;
+              break Loop1;
             }
           }
           else{
             var randomItem = ezlist[Math.floor(Math.random()*ezlist.length)];
             if (randomItem.length >= minWordLen && randomItem.length<=maxWordLen){
-              break;
+              break Loop1;
             }
           }
-          break;
         }
-        if (password.length + randomItem.length >  maxLen -1|| wordChosen >= 4){
+        var listlen = 0;
+        for (i=0;i<password.length;i++){
+          listlen+=password[i].length
+        }
+        if ((listlen + randomItem.length >  maxLen -2) || wordChosen >= 4){
           break;
         }
         else {
-          password += randomItem;
-          printword += (randomItem+"  ")
+          password.push(randomItem);
           wordChosen++;
         }
       }
-      var numLen = maxLen - password.length;
-
-      if (numLen>0){
-        var passNum = Math.floor(Math.random()*(Math.pow(10,numLen)));
-        password += passNum;
-        printword += (passNum)
+      var listlen = 0;
+      for (i=0;i<password.length;i++){
+        listlen+=password[i].length
       }
+      var numLen = maxLen - listlen;
+
+      if (numLen>2){
+        numLen = 2;
+        var passNum = Math.floor(Math.random()*(Math.pow(10,numLen)));
+        password.push(passNum);
+      }
+      else if (numLen > 0){
+        var passNum = Math.floor(Math.random()*(Math.pow(10,numLen)));
+        password.push(passNum);
+      }
+
+
       if (numberSub){
         var changeword;
-        changeword = printword.replace(/l/g,1);
-        changeword = printword.replace(/e/g,3);
-        changeword = printword.replace(/o/g,0);
-        passlist.push(changeword);
-        var password = "";
-        var printword = "";
+        for (i=0;i<password.length;i++){
+          password[i]= password[i].replace(/l/g,1)
+          password[i] = password[i].replace(/e/g,3);
+          password[i] = password[i].replace(/o/g,0);
+        }
+        passlist.push(password);
+        var password = [];
         var wordChosen = 0;
         passChosen ++;
       }
       else {
-        passlist.push(printword);
-        var password = "";
-        var printword = "";
+        passlist.push(password);
+        var password = [];
         var wordChosen = 0;
         passChosen ++;
       }
     }
-     document.getElementById("passworda").innerHTML =passlist[0];
-     document.getElementById("passwordb").innerHTML =passlist[1];
-     document.getElementById("passwordc").innerHTML =passlist[2];
-     document.getElementById("passwordd").innerHTML =passlist[3];
-     document.getElementById("passworde").innerHTML =passlist[4];
+     document.getElementById("passtitle").innerHTML ="Possible Password";
+     document.getElementById("a1").innerHTML =passlist[0];
+     document.getElementById("b1").innerHTML =passlist[1];
+     document.getElementById("c1").innerHTML =passlist[2];
+     document.getElementById("d1").innerHTML =passlist[3];
+     document.getElementById("e1").innerHTML =passlist[4];
+
 }
